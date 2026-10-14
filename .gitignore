@@ -1,0 +1,39 @@
+# --- Python / backend ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.db
+*.sqlite3
+backend/data/models/*.joblib
+backend/data/models/model_card.json
+backend/data/history/*.csv
+
+# --- Node / frontend ---
+node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/coverage/
+frontend/src/lib/api-types.ts
+
+# --- Env & secrets ---
+.env
+.env.*.local
+
+# --- Editors / OS ---
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# --- Docker ---
+*.pid
+
+# --- Playwright ---
+frontend/playwright-report/
+frontend/test-results/

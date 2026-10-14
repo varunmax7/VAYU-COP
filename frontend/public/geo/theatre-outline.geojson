@@ -1,0 +1,38 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Exercise VAYU SHIELD theatre"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              74.0,
+              17.5
+            ],
+            [
+              84.0,
+              17.5
+            ],
+            [
+              84.0,
+              25.5
+            ],
+            [
+              74.0,
+              25.5
+            ],
+            [
+              74.0,
+              17.5
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

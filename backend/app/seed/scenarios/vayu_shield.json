@@ -1,0 +1,172 @@
+{
+  "name": "VAYU SHIELD",
+  "seed": 26250,
+  "sim_start": "2026-11-02T12:00:00Z",
+  "theatre_bounds": { "min_lat": 17.5, "max_lat": 25.5, "min_lon": 74.0, "max_lon": 84.0 },
+  "bases": [
+    { "id": "ALPHA", "name": "Base Alpha", "code": "ALPHA", "lat": 21.60, "lon": 78.20, "role": "Main fighter hub", "runways": 2, "runway_capacity_per_15min": 6, "parking_capacity": 30, "fuel_stock_kl": 800.0 },
+    { "id": "BRAVO", "name": "Base Bravo", "code": "BRAVO", "lat": 22.90, "lon": 80.60, "role": "Fighter & AEW", "runways": 2, "runway_capacity_per_15min": 5, "parking_capacity": 24, "fuel_stock_kl": 650.0 },
+    { "id": "CHARLIE", "name": "Base Charlie", "code": "CHARLIE", "lat": 19.60, "lon": 76.40, "role": "Transport & strike", "runways": 2, "runway_capacity_per_15min": 5, "parking_capacity": 22, "fuel_stock_kl": 700.0 },
+    { "id": "DELTA", "name": "Base Delta", "code": "DELTA", "lat": 20.40, "lon": 82.90, "role": "Forward base", "runways": 1, "runway_capacity_per_15min": 3, "parking_capacity": 18, "fuel_stock_kl": 450.0 }
+  ],
+  "aircraft_types": [
+    {
+      "code": "SU30", "name": "Su-30MKI", "roles": ["CAP", "STRIKE"],
+      "cruise_kts": 480, "range_km": 3000, "endurance_h": 3.5, "turnaround_min": 90,
+      "crew_required": { "PILOT": 1, "WSO": 1 },
+      "compatible_stores": ["AD_STD", "GA_GENERIC"],
+      "wx_minima": { "ceiling_ft": 500, "visibility_km": 1.6, "crosswind_kt": 25 },
+      "allocations": [ { "base_id": "ALPHA", "qty": 6 }, { "base_id": "DELTA", "qty": 4 } ]
+    },
+    {
+      "code": "RAF", "name": "Rafale", "roles": ["CAP", "STRIKE", "RECCE"],
+      "cruise_kts": 480, "range_km": 3500, "endurance_h": 4.0, "turnaround_min": 75,
+      "crew_required": { "PILOT": 1 },
+      "compatible_stores": ["AD_STD", "GA_GENERIC", "RECCE_POD"],
+      "wx_minima": { "ceiling_ft": 500, "visibility_km": 1.6, "crosswind_kt": 25 },
+      "allocations": [ { "base_id": "BRAVO", "qty": 6 } ]
+    },
+    {
+      "code": "LCA", "name": "Tejas Mk1A", "roles": ["CAP"],
+      "cruise_kts": 450, "range_km": 1800, "endurance_h": 2.0, "turnaround_min": 60,
+      "crew_required": { "PILOT": 1 },
+      "compatible_stores": ["AD_STD"],
+      "wx_minima": { "ceiling_ft": 600, "visibility_km": 2.0, "crosswind_kt": 20 },
+      "allocations": [ { "base_id": "ALPHA", "qty": 6 } ]
+    },
+    {
+      "code": "M2K", "name": "Mirage 2000", "roles": ["CAP", "STRIKE"],
+      "cruise_kts": 460, "range_km": 2000, "endurance_h": 2.5, "turnaround_min": 75,
+      "crew_required": { "PILOT": 1 },
+      "compatible_stores": ["AD_STD", "GA_GENERIC"],
+      "wx_minima": { "ceiling_ft": 500, "visibility_km": 1.6, "crosswind_kt": 22 },
+      "allocations": [ { "base_id": "BRAVO", "qty": 4 } ]
+    },
+    {
+      "code": "JAG", "name": "Jaguar", "roles": ["STRIKE", "RECCE"],
+      "cruise_kts": 420, "range_km": 1400, "endurance_h": 2.0, "turnaround_min": 75,
+      "crew_required": { "PILOT": 1 },
+      "compatible_stores": ["GA_GENERIC", "RECCE_POD"],
+      "wx_minima": { "ceiling_ft": 600, "visibility_km": 2.0, "crosswind_kt": 20 },
+      "allocations": [ { "base_id": "CHARLIE", "qty": 4 } ]
+    },
+    {
+      "code": "C17", "name": "C-17 Globemaster III", "roles": ["AIRLIFT", "HADR"],
+      "cruise_kts": 450, "range_km": 4400, "endurance_h": 6.0, "turnaround_min": 180,
+      "crew_required": { "PILOT": 2, "LOADMASTER": 1 },
+      "compatible_stores": ["CARGO_PALLET", "HADR_KIT"],
+      "wx_minima": { "ceiling_ft": 300, "visibility_km": 0.8, "crosswind_kt": 30 },
+      "allocations": [ { "base_id": "DELTA", "qty": 2 } ]
+    },
+    {
+      "code": "C130", "name": "C-130J", "roles": ["AIRLIFT", "SAR", "HADR"],
+      "cruise_kts": 320, "range_km": 3300, "endurance_h": 6.0, "turnaround_min": 120,
+      "crew_required": { "PILOT": 2, "NAVIGATOR": 1, "LOADMASTER": 1 },
+      "compatible_stores": ["CARGO_PALLET", "SAR_KIT", "HADR_KIT"],
+      "wx_minima": { "ceiling_ft": 300, "visibility_km": 0.8, "crosswind_kt": 30 },
+      "allocations": [ { "base_id": "CHARLIE", "qty": 3 } ]
+    },
+    {
+      "code": "IL78", "name": "IL-78", "roles": ["TANKER"],
+      "cruise_kts": 400, "range_km": 3500, "endurance_h": 5.0, "turnaround_min": 150,
+      "crew_required": { "PILOT": 2, "NAVIGATOR": 1, "FLIGHT_ENGINEER": 1 },
+      "compatible_stores": ["TANKER_PODS"],
+      "wx_minima": { "ceiling_ft": 300, "visibility_km": 0.8, "crosswind_kt": 28 },
+      "allocations": [ { "base_id": "ALPHA", "qty": 2 } ]
+    },
+    {
+      "code": "NETRA", "name": "Netra AEW&C", "roles": ["AEW"],
+      "cruise_kts": 380, "range_km": 2500, "endurance_h": 4.0, "turnaround_min": 150,
+      "crew_required": { "PILOT": 2, "MISSION_SYSTEMS_OP": 3 },
+      "compatible_stores": ["AEW_NIL"],
+      "wx_minima": { "ceiling_ft": 500, "visibility_km": 1.6, "crosswind_kt": 25 },
+      "allocations": [ { "base_id": "BRAVO", "qty": 1 } ]
+    },
+    {
+      "code": "MI17", "name": "Mi-17V5", "roles": ["SAR", "HADR", "AIRLIFT"],
+      "cruise_kts": 120, "range_km": 580, "endurance_h": 3.0, "turnaround_min": 45,
+      "crew_required": { "PILOT": 2, "FLIGHT_ENGINEER": 1 },
+      "compatible_stores": ["SAR_KIT", "HADR_KIT", "CARGO_PALLET"],
+      "wx_minima": { "ceiling_ft": 800, "visibility_km": 3.0, "crosswind_kt": 15 },
+      "allocations": [ { "base_id": "CHARLIE", "qty": 2 }, { "base_id": "DELTA", "qty": 2 } ]
+    }
+  ],
+  "airspaces": [
+    { "id": "OSCAR", "name": "OSCAR", "kind": "RESTRICTED", "status": "OPEN", "floor_ft": 0, "ceiling_ft": 45000,
+      "polygon_lat_lon": [[24.0, 82.0], [24.0, 83.0], [24.5, 83.0], [24.5, 82.0], [24.0, 82.0]] },
+    { "id": "PAPA", "name": "PAPA", "kind": "DANGER", "status": "ACTIVE", "floor_ft": 0, "ceiling_ft": 45000,
+      "polygon_lat_lon": [[23.5, 75.0], [23.5, 76.0], [24.0, 76.0], [24.0, 75.0], [23.5, 75.0]] },
+    { "id": "CIVIL-1", "name": "CIVIL-1", "kind": "CORRIDOR", "status": "OPEN", "floor_ft": 0, "ceiling_ft": 18000,
+      "polygon_lat_lon": [[21.0, 78.0], [21.0, 79.0], [23.5, 79.0], [23.5, 78.0], [21.0, 78.0]] },
+    { "id": "ROMEO", "name": "ROMEO", "kind": "MOA", "status": "OPEN", "floor_ft": 0, "ceiling_ft": 45000,
+      "polygon_lat_lon": [[19.0, 75.8], [19.0, 76.8], [19.8, 76.8], [19.8, 75.8], [19.0, 75.8]] }
+  ],
+  "threats": [
+    { "id": "T-1", "label": "T-1", "level": "HIGH", "center_lat": 24.40, "center_lon": 82.60, "radius_km": 70, "mobile": false, "sources": ["threat_intel_a"] },
+    { "id": "T-2", "label": "T-2", "level": "MED", "center_lat": 23.90, "center_lon": 83.50, "radius_km": 50, "mobile": false, "sources": ["threat_intel_b"] },
+    { "id": "T-3", "label": "T-3", "level": "MED", "center_lat": 24.90, "center_lon": 80.80, "radius_km": 45, "mobile": false, "sources": ["threat_intel_a", "threat_intel_b"] }
+  ],
+  "weather_cells": [
+    { "id": "CB-1", "label": "CB-1", "center_lat": 22.39, "center_lon": 80.05, "radius_km": 40, "severity": "severe", "motion_deg": 40, "motion_kts": 15 }
+  ],
+  "missions": [
+    { "id": "MISSION-01", "code": "OP THUNDERBIRD", "type": "CAP", "priority": "P2_IMMEDIATE", "area_name": "S4",
+      "center_lat": 18.8333, "center_lon": 82.75, "earliest_start": "2026-11-02T13:00:00Z", "latest_start": "2026-11-02T13:15:00Z",
+      "on_station_min": 360, "required_aircraft": 0, "required_store": "AD_STD",
+      "notes": "6h CAP, split into 3 relay slots of 2 aircraft each",
+      "relay_slots": { "count": 3, "aircraft_per_slot": 2, "slot_minutes": 120 } },
+    { "id": "MISSION-02", "code": "OP GARUDA EYE", "type": "RECCE", "priority": "P2_IMMEDIATE", "area_name": "S7",
+      "center_lat": 21.5, "center_lon": 80.25, "earliest_start": "2026-11-02T14:00:00Z", "latest_start": "2026-11-02T14:15:00Z",
+      "on_station_min": 45, "required_aircraft": 1, "required_store": "RECCE_POD" },
+    { "id": "MISSION-03", "code": "OP IRON MONSOON", "type": "STRIKE", "priority": "P3_PRIORITY", "area_name": "S9",
+      "center_lat": 24.1667, "center_lon": 75.25, "earliest_start": "2026-11-02T15:00:00Z", "latest_start": "2026-11-02T15:20:00Z",
+      "on_station_min": 30, "required_aircraft": 4, "required_store": "GA_GENERIC" },
+    { "id": "MISSION-04", "code": "OP SKYBRIDGE", "type": "AIRLIFT", "priority": "P3_PRIORITY", "area_name": "S8",
+      "center_lat": 21.5, "center_lon": 82.75, "earliest_start": "2026-11-02T13:30:00Z", "latest_start": "2026-11-02T13:45:00Z",
+      "on_station_min": 60, "required_aircraft": 1, "required_store": "CARGO_PALLET", "notes": "Alpha -> Delta logistics run" },
+    { "id": "MISSION-05", "code": "OP NECTAR", "type": "TANKER", "priority": "P3_PRIORITY", "area_name": "S6",
+      "center_lat": 21.5, "center_lon": 77.75, "earliest_start": "2026-11-02T14:00:00Z", "latest_start": "2026-11-02T14:20:00Z",
+      "on_station_min": 180, "required_aircraft": 1, "required_store": "TANKER_PODS" },
+    { "id": "MISSION-06", "code": "OP WATCHTOWER", "type": "AEW", "priority": "P2_IMMEDIATE", "area_name": "S11",
+      "center_lat": 24.1667, "center_lon": 80.25, "earliest_start": "2026-11-02T12:30:00Z", "latest_start": "2026-11-02T12:40:00Z",
+      "on_station_min": 240, "required_aircraft": 1, "required_store": "AEW_NIL" },
+    { "id": "MISSION-07", "code": "OP LIFELINE", "type": "SAR", "priority": "P2_IMMEDIATE", "area_name": "S3",
+      "center_lat": 18.8333, "center_lon": 80.25, "earliest_start": "2026-11-02T12:00:00Z", "latest_start": "2026-11-02T12:10:00Z",
+      "on_station_min": 720, "required_aircraft": 1, "required_store": "SAR_KIT", "notes": "SAR standby for the duration of the exercise" },
+    { "id": "MISSION-08", "code": "OP SANJEEVANI", "type": "HADR", "priority": "P4_ROUTINE", "area_name": "S10",
+      "center_lat": 24.1667, "center_lon": 77.75, "earliest_start": "2026-11-02T16:00:00Z", "latest_start": "2026-11-02T16:30:00Z",
+      "on_station_min": 90, "required_aircraft": 1, "required_store": "HADR_KIT" },
+    { "id": "MISSION-09", "code": "OP FALCON SWEEP", "type": "CAP", "priority": "P4_ROUTINE", "area_name": "S1",
+      "center_lat": 18.8333, "center_lon": 75.25, "earliest_start": "2026-11-02T18:00:00Z", "latest_start": "2026-11-02T18:30:00Z",
+      "on_station_min": 60, "required_aircraft": 1, "required_store": "AD_STD" },
+    { "id": "MISSION-10", "code": "OP RIVER RUN", "type": "AIRLIFT", "priority": "P4_ROUTINE", "area_name": "S2",
+      "center_lat": 18.8333, "center_lon": 77.75, "earliest_start": "2026-11-02T19:00:00Z", "latest_start": "2026-11-02T19:30:00Z",
+      "on_station_min": 60, "required_aircraft": 1, "required_store": "CARGO_PALLET", "notes": "Charlie -> Alpha resupply" },
+    { "id": "MISSION-11", "code": "OP SILENT OWL", "type": "RECCE", "priority": "P4_ROUTINE", "area_name": "S12",
+      "center_lat": 24.1667, "center_lon": 82.75, "earliest_start": "2026-11-02T20:00:00Z", "latest_start": "2026-11-02T20:30:00Z",
+      "on_station_min": 45, "required_aircraft": 1, "required_store": "RECCE_POD" },
+    { "id": "MISSION-12", "code": "OP CLEAR SKY", "type": "CAP", "priority": "P4_ROUTINE", "area_name": "S4",
+      "center_lat": 18.8333, "center_lon": 82.75, "earliest_start": "2026-11-02T21:00:00Z", "latest_start": "2026-11-02T21:30:00Z",
+      "on_station_min": 60, "required_aircraft": 1, "required_store": "AD_STD" }
+  ],
+  "disruption_timeline": [
+    { "sim_time": "2026-11-02T12:20:00Z", "source": "maint_mis", "type": "AIRCRAFT_UNSERVICEABLE",
+      "description": "SU30 #04 hydraulic snag -> UNSERVICEABLE (assigned to OP THUNDERBIRD)",
+      "payload": { "aircraft_callsign": "SU30 #04", "new_status": "UNSERVICEABLE", "mission_code": "OP THUNDERBIRD" } },
+    { "sim_time": "2026-11-02T12:40:00Z", "source": "threat_intel_a+b", "type": "THREAT_DETECTED",
+      "description": "New threat T-4 HIGH, reported by two sources with a slight position offset; fusion merges into one zone",
+      "payload": { "label": "T-4", "level": "HIGH", "affects_mission_code": "OP GARUDA EYE" } },
+    { "sim_time": "2026-11-02T13:00:00Z", "source": "met_feed", "type": "BASE_WEATHER_CLOSURE",
+      "description": "CB-1 reaches Base Bravo -> Bravo CLOSED 13:00-15:00Z",
+      "payload": { "base_id": "BRAVO", "closed_from": "2026-11-02T13:00:00Z", "closed_to": "2026-11-02T15:00:00Z", "reason": "TSRA" } },
+    { "sim_time": "2026-11-02T13:15:00Z", "source": "airspace_notam", "type": "AIRSPACE_CLOSED",
+      "description": "AIRSPACE OSCAR CLOSED 1315Z-1800Z",
+      "payload": { "airspace_id": "OSCAR", "closed_from": "2026-11-02T13:15:00Z", "closed_to": "2026-11-02T18:00:00Z" } },
+    { "sim_time": "2026-11-02T13:30:00Z", "source": "tasking", "type": "MISSION_REQUESTED",
+      "description": "P1 FLASH SAR OP LIFELINE-2 in S6",
+      "payload": { "code": "OP LIFELINE-2", "type": "SAR", "priority": "P1_FLASH", "area_name": "S6" } },
+    { "sim_time": "2026-11-02T14:00:00Z", "source": "crew_roster", "type": "CREW_UNAVAILABLE",
+      "description": "A Su-30 WSO reported medical-unfit",
+      "payload": { "role": "WSO", "type_code": "SU30", "new_status": "MEDICAL" } }
+  ]
+}

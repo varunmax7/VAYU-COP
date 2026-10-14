@@ -1,0 +1,141 @@
+from enum import StrEnum
+
+
+class MissionType(StrEnum):
+    CAP = "CAP"
+    RECCE = "RECCE"
+    STRIKE = "STRIKE"
+    AIRLIFT = "AIRLIFT"
+    TANKER = "TANKER"
+    AEW = "AEW"
+    SAR = "SAR"
+    HADR = "HADR"
+
+
+class Priority(StrEnum):
+    P1_FLASH = "P1_FLASH"
+    P2_IMMEDIATE = "P2_IMMEDIATE"
+    P3_PRIORITY = "P3_PRIORITY"
+    P4_ROUTINE = "P4_ROUTINE"
+
+
+class AircraftStatus(StrEnum):
+    READY = "READY"
+    TASKED = "TASKED"
+    AIRBORNE = "AIRBORNE"
+    TURNAROUND = "TURNAROUND"
+    MAINTENANCE = "MAINTENANCE"
+    UNSERVICEABLE = "UNSERVICEABLE"
+
+
+class CrewRole(StrEnum):
+    PILOT = "PILOT"
+    WSO = "WSO"
+    NAVIGATOR = "NAVIGATOR"
+    LOADMASTER = "LOADMASTER"
+    FLIGHT_ENGINEER = "FLIGHT_ENGINEER"
+    MISSION_SYSTEMS_OP = "MISSION_SYSTEMS_OP"
+
+
+class CrewStatus(StrEnum):
+    AVAILABLE = "AVAILABLE"
+    ON_DUTY = "ON_DUTY"
+    AIRBORNE = "AIRBORNE"
+    RESTING = "RESTING"
+    LEAVE = "LEAVE"
+    MEDICAL = "MEDICAL"
+
+
+class BaseStatus(StrEnum):
+    OPEN = "OPEN"
+    RESTRICTED = "RESTRICTED"
+    CLOSED = "CLOSED"
+
+
+class MissionStatus(StrEnum):
+    REQUESTED = "REQUESTED"
+    PLANNED = "PLANNED"
+    APPROVED = "APPROVED"
+    AIRBORNE = "AIRBORNE"
+    ON_STATION = "ON_STATION"
+    RTB = "RTB"
+    COMPLETED = "COMPLETED"
+    CANCELLED = "CANCELLED"
+    UNCOVERED = "UNCOVERED"
+    AT_RISK = "AT_RISK"
+
+
+class PlanStatus(StrEnum):
+    DRAFT = "DRAFT"
+    PROPOSED = "PROPOSED"
+    APPROVED = "APPROVED"
+    REJECTED = "REJECTED"
+    SUPERSEDED = "SUPERSEDED"
+
+
+class PlanProfile(StrEnum):
+    BALANCED = "BALANCED"
+    LOW_RISK = "LOW_RISK"
+    FASTEST = "FASTEST"
+    RESOURCE_SAVER = "RESOURCE_SAVER"
+
+
+class AlertSeverity(StrEnum):
+    CRITICAL = "CRITICAL"
+    WARNING = "WARNING"
+    INFO = "INFO"
+
+
+class UserRole(StrEnum):
+    COMMANDER = "COMMANDER"
+    PLANNER = "PLANNER"
+    MAINTENANCE = "MAINTENANCE"
+    MET = "MET"
+    INTEL = "INTEL"
+    AIRCREW = "AIRCREW"
+    ADMIN = "ADMIN"
+
+
+class StoreCategory(StrEnum):
+    AD_STD = "AD_STD"
+    RECCE_POD = "RECCE_POD"
+    GA_GENERIC = "GA_GENERIC"
+    CARGO_PALLET = "CARGO_PALLET"
+    TANKER_PODS = "TANKER_PODS"
+    AEW_NIL = "AEW_NIL"
+    SAR_KIT = "SAR_KIT"
+    HADR_KIT = "HADR_KIT"
+
+
+class ReasonCode(StrEnum):
+    ROLE_MISMATCH = "ROLE_MISMATCH"
+    NOT_READY = "NOT_READY"
+    MAINT_DUE = "MAINT_DUE"
+    BASE_CLOSED = "BASE_CLOSED"
+    WX_BELOW_MINIMA = "WX_BELOW_MINIMA"
+    OUT_OF_RANGE = "OUT_OF_RANGE"
+    NO_STORES = "NO_STORES"
+    NO_QUALIFIED_CREW = "NO_QUALIFIED_CREW"
+    TIME_CONFLICT = "TIME_CONFLICT"
+    HIGHER_RISK = "HIGHER_RISK"
+    SLOWER = "SLOWER"
+    LOW_RELIABILITY = "LOW_RELIABILITY"
+
+
+class AirspaceKind(StrEnum):
+    RESTRICTED = "RESTRICTED"
+    DANGER = "DANGER"
+    CORRIDOR = "CORRIDOR"
+    MOA = "MOA"
+
+
+class AirspaceStatus(StrEnum):
+    ACTIVE = "ACTIVE"
+    CLOSED = "CLOSED"
+    OPEN = "OPEN"
+
+
+class ThreatLevel(StrEnum):
+    HIGH = "HIGH"
+    MED = "MED"
+    LOW = "LOW"

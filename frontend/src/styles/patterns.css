@@ -1,0 +1,32 @@
+/* 45deg hatching — used by restricted airspace polygons (map), crew rest blocks and
+   maintenance blocks (Gantt). §13.3. */
+
+.hatch {
+  background-image: repeating-linear-gradient(
+    45deg,
+    var(--text-muted) 0,
+    var(--text-muted) 1px,
+    transparent 1px,
+    transparent 7px
+  );
+}
+
+.hatch-crit {
+  background-image: repeating-linear-gradient(
+    45deg,
+    var(--crit) 0,
+    var(--crit) 1px,
+    transparent 1px,
+    transparent 7px
+  );
+}
+
+.hatch-warn {
+  background-image: repeating-linear-gradient(
+    45deg,
+    var(--warn) 0,
+    var(--warn) 1px,
+    transparent 1px,
+    transparent 7px
+  );
+}
